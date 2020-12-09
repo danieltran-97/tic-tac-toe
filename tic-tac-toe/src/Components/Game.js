@@ -26,7 +26,7 @@ const Game = () => {
         if(winner || squares[i]) return;
         // Put an X or O in the clicked square
         squares[i] = xIsNext ? 'X' : 'O';
-        setHistory([...timeInHistory,squares])
+        setHistory([...timeInHistory, squares])
         setStepNumber(timeInHistory.length)
         //set board state
         // setBoard(boardCopy);
@@ -39,7 +39,7 @@ const Game = () => {
         setXisNext(step % 2 === 0)
     }
 
-    const renderMoves = () => {
+    const renderMoves = () => (
         history.map((_step, move) => {
             const destination = move ? `Go to move#${move}` : 'Go to start';
             return (
@@ -50,7 +50,7 @@ const Game = () => {
                 </li>
             )
         })
-    }
+    )
     return ( 
         //Wrapped in fragment because cannot have more than one outermost tag
         <>
